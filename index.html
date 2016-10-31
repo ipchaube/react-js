@@ -13,6 +13,9 @@
     <script src="./libs/reactjs/react-dom.js"></script>
     <script src="./libs/reactjs/remarkable.min.js"></script>
 
+    <!-- Application Components-->
+    <script src="./app/component.js"></script>
+
 </head>
 <body>
 <div id="content"></div>
@@ -21,30 +24,10 @@
 </body>
 
 <script>
-    //React componetc
 
-    var HeaderBox = React.createClass({displayName: 'HeaderBox',
-        render: function() {
-            return (
-                    React.createElement('div', {className: "headerBox"},
-                            "Hello, world! I am a Hear box Commponente."
-                    )
-            );
-        }
-    });
-
-    var CommentBox = React.createClass({displayName: 'CommentBox',
-        render: function() {
-            return (
-                    React.createElement('div', {className: "commentBox"},
-                            "Hello, world! I am a CommentBox."
-                    )
-            );
-        }
-    });
-
-
-
+    /*
+     You can find two component "CommentBox" and  "HeaderBox" in app/cmponents.js file
+     */
     ReactDOM.render(
             //React.createElement(CommentBox, null),
             React.createElement(HeaderBox, null),
