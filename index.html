@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Start with React JS</title>
+    <!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
+    -->
+
+    <!-- Setting UP react JS Libraries -->
+    <script src="./libs/reactjs/react.js"></script>
+    <script src="./libs/reactjs/react-dom.js"></script>
+    <script src="./libs/reactjs/remarkable.min.js"></script>
+
+</head>
+<body>
+<div id="content"></div>
+
+
+</body>
+
+<script>
+    //React component
+    var CommentBox = React.createClass({displayName: 'CommentBox',
+        render: function() {
+            return (
+                    React.createElement('div', {className: "commentBox"},
+                            "Hello, world! I am a CommentBox."
+                    )
+            );
+        }
+    });
+    ReactDOM.render(
+            React.createElement(CommentBox, null),
+            document.getElementById('content')
+    );
+
+</script>
+
+</html>
