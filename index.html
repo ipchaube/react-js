@@ -14,7 +14,7 @@
     <script src="./libs/reactjs/remarkable.min.js"></script>
 
     <!-- Application Components-->
-    <script src="./app/component.js"></script>
+    <script type="text/jsx" src="./app/component.js"></script>
 
 </head>
 <body>
@@ -23,14 +23,39 @@
 
 </body>
 
-<script>
+<script type="text/jsx">
 
     /*
      You can find two component "CommentBox" and  "HeaderBox" in app/cmponents.js file
      */
+
+    var Comment = React.createClass({
+        rawMarkup: function() {
+            var md = new Remarkable();
+            var rawMarkup = md.render(this.props.children.toString());
+            return { __html: rawMarkup };
+        },
+
+        render: function() {
+            return (
+                    <div className="comment">
+                        <h2 className="commentAuthor">
+                            {this.props.author}
+                        </h2>
+                        <span dangerouslySetInnerHTML={this.rawMarkup()} />
+                    </div>
+            );
+        }
+    });
+
     ReactDOM.render(
+            /*
             //React.createElement(CommentBox, null),
             React.createElement(HeaderBox, null),
+            document.getElementById('content')
+            */
+            //<CommentBox data={data} />,
+            React.createElement(Comment, null),
             document.getElementById('content')
     );
 
