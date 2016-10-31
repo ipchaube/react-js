@@ -21,7 +21,18 @@
 </body>
 
 <script>
-    //React component
+    //React componetc
+
+    var HeaderBox = React.createClass({displayName: 'HeaderBox',
+        render: function() {
+            return (
+                    React.createElement('div', {className: "headerBox"},
+                            "Hello, world! I am a Hear box Commponente."
+                    )
+            );
+        }
+    });
+
     var CommentBox = React.createClass({displayName: 'CommentBox',
         render: function() {
             return (
@@ -31,8 +42,12 @@
             );
         }
     });
+
+
+
     ReactDOM.render(
-            React.createElement(CommentBox, null),
+            //React.createElement(CommentBox, null),
+            React.createElement(HeaderBox, null),
             document.getElementById('content')
     );
 
