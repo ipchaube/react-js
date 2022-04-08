@@ -26,4 +26,4 @@ jobs:
 workflows:
   indu-r-app-workflow:
     jobs:
-      - app-r-running
+      - run-r-app
